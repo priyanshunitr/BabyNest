@@ -1003,6 +1003,10 @@ class RAGService {
     const query = userQuery.toLowerCase();
 
     switch (intent.name) {
+      case 'general_chat':
+        data.query = userQuery;
+        break;
+
       case 'create_appointment':
         data.title = this.extractAppointmentTitle(query);
         data.date = this.extractDate(query);
